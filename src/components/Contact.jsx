@@ -1,7 +1,13 @@
 import { motion } from 'framer-motion'
 import { HiOutlineMail } from 'react-icons/hi'
-import { EMAIL, LINKEDIN_URL } from '../constants'
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { EMAIL, LINKEDIN_URL, GITHUB_URL } from '../constants'
 import { stagger, fadeUp } from './motion'
+
+const socials = [
+  { label: 'LinkedIn', href: LINKEDIN_URL, Icon: FaLinkedinIn },
+  { label: 'GitHub',   href: GITHUB_URL,   Icon: FaGithub     },
+]
 
 export default function Contact() {
   return (
@@ -32,25 +38,28 @@ export default function Contact() {
           Open to new opportunities. Reach out.
         </motion.p>
 
-        <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href={`mailto:${EMAIL}`}
-            className="btn-primary text-sm"
-          >
+        {/* Email button */}
+        <motion.div variants={fadeUp} className="flex justify-center mb-8">
+          <a href={`mailto:${EMAIL}`} className="btn-primary text-sm">
             <HiOutlineMail size={18} />
             {EMAIL}
           </a>
+        </motion.div>
 
-          {LINKEDIN_URL && (
+        {/* Social icons */}
+        <motion.div variants={fadeUp} className="flex justify-center gap-4">
+          {socials.map(({ label, href, Icon }) => (
             <a
-              href={LINKEDIN_URL}
+              key={label}
+              href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary text-sm"
+              aria-label={label}
+              className="social-icon"
             >
-              LinkedIn
+              <Icon size={18} />
             </a>
-          )}
+          ))}
         </motion.div>
 
         {/* Footer */}

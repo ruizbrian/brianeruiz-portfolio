@@ -204,6 +204,32 @@ body {
   transform: translateY(-1px);
 }
 
+/* ── Social icon ────────────────────────────────── */
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--muted);
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-icon:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(79, 142, 247, 0.25);
+}
+
+.social-icon-sm {
+  width: 32px;
+  height: 32px;
+}
+
 /* ── Divider line ───────────────────────────────── */
 .h-divider {
   height: 1px;
