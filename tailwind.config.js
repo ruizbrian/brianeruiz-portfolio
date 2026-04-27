@@ -4,13 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg:      '#070d1a',
-        raised:  '#0d1628',
-        accent:  '#4f8ef7',
-        accent2: '#7eb8f7',
-        ink:     '#dce8ff',
-        muted:   '#6b84aa',
-        border:  'rgba(79,142,247,0.14)',
+        bg:      'var(--bg)',
+        raised:  'var(--raised)',
+        accent:  'var(--accent)',
+        accent2: 'var(--accent2)',
+        ink:     'var(--ink)',
+        muted:   'var(--muted)',
+        border:  'var(--border)',
       },
       fontFamily: {
         display: ['Syne', 'system-ui', 'sans-serif'],

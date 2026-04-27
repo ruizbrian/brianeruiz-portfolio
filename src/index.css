@@ -2,19 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Base ───────────────────────────────────────── */
+/* ── Theme tokens ───────────────────────────────── */
 :root {
-  --bg:      #070d1a;
-  --raised:  #0d1628;
-  --accent:  #4f8ef7;
-  --accent2: #7eb8f7;
-  --ink:     #dce8ff;
-  --muted:   #6b84aa;
-  --border:  rgba(79, 142, 247, 0.14);
+  --bg:        #070d1a;
+  --raised:    #0d1628;
+  --accent:    #4f8ef7;
+  --accent2:   #7eb8f7;
+  --ink:       #dce8ff;
+  --muted:     #6b84aa;
+  --border:    rgba(79, 142, 247, 0.14);
+  --card-bg:   rgba(255, 255, 255, 0.035);
+  --nav-bg:    rgba(7, 13, 26, 0.88);
+  --nav-menu:  rgba(7, 13, 26, 0.97);
+  --orb-1:     rgba(79, 142, 247, 0.14);
+  --orb-2:     rgba(126, 184, 247, 0.10);
+  --dot-color: rgba(79, 142, 247, 0.18);
 }
 
+[data-theme="light"] {
+  --bg:        #f0f4ff;
+  --raised:    #ffffff;
+  --accent:    #2e6ef0;
+  --accent2:   #4f8ef7;
+  --ink:       #0a1228;
+  --muted:     #4a5a7a;
+  --border:    rgba(10, 18, 40, 0.12);
+  --card-bg:   rgba(10, 18, 40, 0.04);
+  --nav-bg:    rgba(240, 244, 255, 0.88);
+  --nav-menu:  rgba(240, 244, 255, 0.98);
+  --orb-1:     rgba(46, 110, 240, 0.08);
+  --orb-2:     rgba(79, 142, 247, 0.06);
+  --dot-color: rgba(46, 110, 240, 0.12);
+}
+
+/* ── Base ───────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  /* smooth theme crossfade on everything except transform/opacity (used by Framer Motion) */
+  transition: background-color 0.35s ease;
 }
 
 body {
@@ -22,6 +47,7 @@ body {
   color: var(--ink);
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /* ── Scrollbar ──────────────────────────────────── */
@@ -32,7 +58,7 @@ body {
 
 /* ── Dot grid ───────────────────────────────────── */
 .dot-grid {
-  background-image: radial-gradient(rgba(79, 142, 247, 0.18) 1px, transparent 1px);
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -48,7 +74,7 @@ body {
 .hero-orb-1 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle, rgba(79, 142, 247, 0.14), transparent 65%);
+  background: radial-gradient(circle, var(--orb-1), transparent 65%);
   top: -220px;
   left: 50%;
   transform: translateX(-60%);
@@ -58,7 +84,7 @@ body {
 .hero-orb-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(126, 184, 247, 0.10), transparent 65%);
+  background: radial-gradient(circle, var(--orb-2), transparent 65%);
   bottom: -80px;
   right: -100px;
   animation: drift-b 18s ease-in-out infinite alternate;
@@ -103,14 +129,15 @@ body {
   line-height: 1.1;
   color: var(--ink);
   margin-bottom: 56px;
+  transition: color 0.35s ease;
 }
 
 /* ── Card ───────────────────────────────────────── */
 .card {
-  background: rgba(255, 255, 255, 0.035);
+  background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, background-color 0.35s ease;
 }
 
 .card:hover {
@@ -130,6 +157,7 @@ body {
   border: 1px solid rgba(79, 142, 247, 0.2);
   color: var(--accent2);
   white-space: nowrap;
+  transition: color 0.35s ease;
 }
 
 /* ── Buttons ────────────────────────────────────── */
@@ -202,4 +230,5 @@ body {
   flex-shrink: 0;
   margin-top: 3px;
   box-shadow: 0 0 12px rgba(79, 142, 247, 0.4);
+  transition: background-color 0.35s ease;
 }
