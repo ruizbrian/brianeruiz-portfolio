@@ -20,19 +20,19 @@
 }
 
 [data-theme="light"] {
-  --bg:        #f0f4ff;
+  --bg:        #f5f5f7;
   --raised:    #ffffff;
   --accent:    #2e6ef0;
-  --accent2:   #4f8ef7;
+  --accent2:   #1e5cd9;
   --ink:       #0a1228;
-  --muted:     #4a5a7a;
-  --border:    rgba(10, 18, 40, 0.12);
-  --card-bg:   rgba(10, 18, 40, 0.04);
-  --nav-bg:    rgba(240, 244, 255, 0.88);
-  --nav-menu:  rgba(240, 244, 255, 0.98);
-  --orb-1:     rgba(46, 110, 240, 0.08);
-  --orb-2:     rgba(79, 142, 247, 0.06);
-  --dot-color: rgba(46, 110, 240, 0.12);
+  --muted:     #5a6a85;
+  --border:    rgba(10, 18, 40, 0.10);
+  --card-bg:   rgba(10, 18, 40, 0.035);
+  --nav-bg:    rgba(245, 245, 247, 0.85);
+  --nav-menu:  rgba(245, 245, 247, 0.98);
+  --orb-1:     rgba(46, 110, 240, 0.06);
+  --orb-2:     rgba(79, 142, 247, 0.04);
+  --dot-color: rgba(46, 110, 240, 0.10);
 }
 
 /* ── Base ───────────────────────────────────────── */
@@ -154,10 +154,10 @@ body {
   padding: 3px 10px;
   border-radius: 4px;
   background: rgba(79, 142, 247, 0.10);
-  border: 1px solid rgba(79, 142, 247, 0.2);
-  color: var(--accent2);
+  border: 1px solid rgba(79, 142, 247, 0.22);
+  color: var(--accent);
   white-space: nowrap;
-  transition: color 0.35s ease;
+  transition: color 0.35s ease, background-color 0.35s ease;
 }
 
 /* ── Buttons ────────────────────────────────────── */
